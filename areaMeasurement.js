@@ -37,13 +37,13 @@ for (let i = 0; i < titik.length - 1; i++) {
     let temp = ((titik[i][0] * titik[i + 1][0]) + (titik[i][1] * titik[i + 1][1])) /
         (pythagoras(titik[i][0], titik[i][1]) * pythagoras(titik[i+1][0], titik[i+1][1]));
     
-    let angle = Math.acos(temp) * (180/Math.PI)
+    let angle = Math.acos(temp)
     thetaAngle.push(angle);
 }
 
 // console.log(thetaAngle)
 
-for(let i = 0; i < thetaAngle.length - 1; i++) {
+for(let i = 0; i < thetaAngle.length; i++) {
     let temp = Math.abs(0.5 * pythagoras(titik[i][0], titik[i][1]) * pythagoras(titik[i+1][0], titik[i+1][1]) * Math.sin(thetaAngle[i]))
     
     area.push(temp)
@@ -55,5 +55,4 @@ area.forEach((item) => {
     areaMeasurement += item
 })
 
-console.log(`Luas monas = ${Math.round(areaMeasurement)} satuan luas`)
-
+console.log(`Luas area = ${Math.round(areaMeasurement)} satuan luas`)
